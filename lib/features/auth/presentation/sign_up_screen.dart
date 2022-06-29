@@ -6,6 +6,7 @@ import '../../../const/strings.dart';
 import '../../../core/common_widget/text_form_field.dart';
 import '../common_widget/auth_scaffold.dart';
 import '../common_widget/sign_buttons.dart';
+import '../common_widget/texts_lables.dart';
 import 'login_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -45,10 +46,11 @@ class SignUpScreen extends StatelessWidget {
                 title: kPassword,
                 hintText: kPhoneNumberHint,
               ),
+              SizedBox(height: 16),
               const SignInButtons(title: 'Sign Up', googleTitle: kSignUpGoogle),
               SwithFromLoginToSignUp(
                 spacing: 0,
-                question: kRegisterPhrase,
+                question: kLoginPhrase,
                 answer: ' Sign in Here',
                 onPressed: () {
                   Navigator.pushNamed(context, kLoginScreen);

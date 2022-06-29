@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void transition(int timeInSeconds, String nextScreen) {
     Future.delayed(Duration(seconds: timeInSeconds))
-        .then((value) => Navigator.pushReplacementNamed(context, nextScreen));
+        .then((value) => Navigator.pushNamed(context, nextScreen));
   }
 
   @override

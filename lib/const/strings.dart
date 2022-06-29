@@ -14,6 +14,7 @@ const kSignInGoogle = 'Sign in with Google';
 const kPhoneNumberHint = 'Eg.50666205';
 
 // register screen...
+const kLoginPhrase = 'Already Have An Account?';
 const kPhoneNumberTitle = 'Phone Number';
 const kEmail = 'Email';
 const kPassword = 'Password';

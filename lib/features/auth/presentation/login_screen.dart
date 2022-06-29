@@ -7,6 +7,7 @@ import '../../../routing/route_names.dart';
 import '../../splash/presentation/widgets/buttons.dart';
 import '../common_widget/auth_scaffold.dart';
 import '../common_widget/sign_buttons.dart';
+import '../common_widget/texts_lables.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthScaffold(
-      top: MediaQuery.of(context).size.height / 3,
+      top: MediaQuery.of(context).size.height / 3.5,
       body: Scaffold(
         body: Padding(
           padding: const EdgeInsets.only(
@@ -36,12 +37,15 @@ class LoginScreen extends StatelessWidget {
                 ),
                 hintText: kPhoneNumberHint,
               ),
-              SizedBox(height: 18),
+              SizedBox(height: 25),
               const Expanded(
-                flex: 2,
-                child: SignInButtons(
-                  title: 'Sign in',
-                  googleTitle: kSignInGoogle,
+                flex: 3,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 22.0),
+                  child: SignInButtons(
+                    title: 'Sign in',
+                    googleTitle: kSignInGoogle,
+                  ),
                 ),
               ),
               Expanded(
@@ -96,58 +100,6 @@ class SwithFromLoginToSignUp extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.caption!,
         ),
-      ],
-    );
-  }
-}
-
-class WelcomeCaption extends StatelessWidget {
-  const WelcomeCaption({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Welcome to 7Krave',
-      style: Theme.of(context).textTheme.caption,
-    );
-  }
-}
-
-class AuthTitle extends StatelessWidget {
-  const AuthTitle({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          title,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .copyWith(fontWeight: FontWeight.w500),
-        ),
-        const Spacer(),
-        GestureDetector(
-          child: Row(children: const [
-            Text(
-              'Help',
-              style: TextStyle(color: Colors.blue),
-            ),
-            Icon(
-              Icons.question_mark,
-              size: 17,
-              color: Colors.blue,
-            )
-          ]),
-        )
       ],
     );
   }

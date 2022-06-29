@@ -16,14 +16,26 @@ class AppTextForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title),
+        Text(
+          title,
+          style: TextStyle(color: Colors.grey),
+        ),
         const SizedBox(
           height: 8,
         ),
         TextFormField(
           decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+              enabledBorder: OutlineInputBorder(
+                gapPadding: 0,
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(
+                  color: Colors.grey.withOpacity(0.5),
+                ),
+              ),
+              border: OutlineInputBorder(
+                  gapPadding: 0,
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide(color: Colors.grey.withOpacity(0.5))),
               prefixIcon: prefixIcon,
               hintText: hintText),
         ),
