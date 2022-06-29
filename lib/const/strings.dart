@@ -5,3 +5,12 @@ const kSubTitle1 =
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s';
 const kSubTitle2 =
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s';
+
+// login screen
+const kRegisterPhrase = 'Don\'t have an account?';
+const kPolicy = 'Use The Application according to the policy rules .'
+    'Any kind of violation will be sanched';
+
+const kPhoneNumberHint = 'Eg.50666205';
+
+const kPhoneNumberTitle = 'Phone Number';
