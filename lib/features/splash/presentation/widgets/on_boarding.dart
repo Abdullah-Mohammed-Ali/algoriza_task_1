@@ -5,26 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../../model/on_boarding_model.dart';
 
-class GoToRegister extends StatelessWidget {
-  GoToRegister({
-    Key? key,
-    required this.onPressed,
-  }) : super(key: key);
-  final VoidCallback onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text('Don\'t have an account?'),
-          TextButton(onPressed: onPressed, child: const Text('Sign up'))
-        ],
-      ),
-    );
-  }
-}
-
 class OnBoarding extends StatelessWidget {
   const OnBoarding({
     Key? key,

@@ -13,14 +13,33 @@ class AppRouting {
         return PageRouteBuilder(
             pageBuilder: (context, animation, sa) => const SplashScreen());
       case kOnBoardingScreen:
-        return PageRouteBuilder(
-            pageBuilder: (context, animation, sa) => OnBoardingScreen());
+        return fadeRouting(screen: OnBoardingScreen());
       case kLoginScreen:
-        return PageRouteBuilder(
-            pageBuilder: (context, animation, sa) => const LoginScreen());
+        return fadeRouting(screen: const LoginScreen());
+
       case kSignupScreen:
-        return PageRouteBuilder(
-            pageBuilder: (context, animation, sa) => const SignUpScreen());
+        return fadeRouting(screen: const SignUpScreen());
     }
+  }
+
+  PageRouteBuilder<dynamic> fadeRouting({required Widget screen}) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, sa) => screen,
+      transitionDuration: Duration(seconds: 1),
+      transitionsBuilder: (_, animation, sa, child) {
+        var start = 0.0;
+        var end = 1.0;
+        var tween = Tween<double>(
+          begin: start,
+          end: end,
+        );
+
+        var opacityAnimation = animation.drive(tween);
+        return FadeTransition(
+          opacity: opacityAnimation,
+          child: child,
+        );
+      },
+    );
   }
 }

@@ -4,31 +4,74 @@ import '../../../../const/colors.dart';
 import '../../../../routing/route_names.dart';
 
 class DefaultButton extends StatelessWidget {
-  const DefaultButton({
+  DefaultButton({
     Key? key,
+    this.padding = 0,
     required this.title,
+    required this.onPressed,
   }) : super(key: key);
   final String title;
+  final VoidCallback onPressed;
+  double padding;
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          width: double.infinity,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: MaterialButton(
-              onPressed: () {},
-              color: MyColors.primary,
-              child: Text(
-                title,
-                style: const TextStyle(color: Colors.white),
-              )),
+    return Container(
+      width: double.infinity,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: MaterialButton(
+          onPressed: onPressed,
+          color: MyColors.primary,
+          child: Padding(
+            padding: EdgeInsets.all(padding),
+            child: Text(
+              title,
+              style: const TextStyle(color: Colors.white),
+            ),
+          )),
+    );
+  }
+}
+
+class SocialButton extends StatelessWidget {
+  SocialButton({
+    Key? key,
+    required this.title,
+    required this.onPressed,
+    this.prefix,
+  }) : super(key: key);
+  final String title;
+  final VoidCallback onPressed;
+  Widget? prefix;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: double.infinity,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        decoration: BoxDecoration(
+          border: Border.all(color: MyColors.primary),
+          borderRadius: BorderRadius.circular(16),
         ),
+        child: MaterialButton(
+            onPressed: onPressed,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                prefix ?? const SizedBox(),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  title,
+                  style: const TextStyle(color: MyColors.primary),
+                ),
+              ],
+            )),
       ),
     );
   }
@@ -59,6 +102,28 @@ class SkipButton extends StatelessWidget {
             child: const Text('Skip'),
           ),
         )
+      ],
+    );
+  }
+}
+
+class FullTextButton extends StatelessWidget {
+  FullTextButton({
+    Key? key,
+    required this.onPressed,
+    required this.title,
+    required this.buttonTitle,
+  }) : super(key: key);
+  final VoidCallback onPressed;
+  final String title;
+  final String buttonTitle;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(title),
+        TextButton(onPressed: onPressed, child: Text(buttonTitle))
       ],
     );
   }

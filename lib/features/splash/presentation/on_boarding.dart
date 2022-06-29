@@ -29,10 +29,24 @@ class OnBoardingScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const DefaultButton(title: 'Get Started'),
-            GoToRegister(onPressed: () {
-              Navigator.pushReplacementNamed(context, kSignupScreen);
-            })
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all( 8.0),
+                child: DefaultButton(
+                  title: 'Get Started',
+                  onPressed: () {},
+                ),
+              ),
+            ),
+            Expanded(
+              child: FullTextButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, kSignupScreen);
+                },
+                title: 'Don\'t have an account?',
+                buttonTitle: 'Sign up',
+              ),
+            )
           ],
         ),
       ),
