@@ -10,7 +10,13 @@ const kSubTitle2 =
 const kRegisterPhrase = 'Don\'t have an account?';
 const kPolicy = 'Use The Application according to the policy rules .'
     'Any kind of violation will be sanched';
-
+const kSignInGoogle = 'Sign in with Google';
 const kPhoneNumberHint = 'Eg.50666205';
 
+// register screen...
 const kPhoneNumberTitle = 'Phone Number';
+const kEmail = 'Email';
+const kPassword = 'Password';
+const kSignUpGoogle = 'Sign up with Google';
+
+//

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AppTextForm extends StatelessWidget {
-  const AppTextForm({
+  AppTextForm({
     Key? key,
     required this.title,
-    required this.prefixIcon,
+    this.prefixIcon,
     required this.hintText,
   }) : super(key: key);
 
   final String title;
   final String hintText;
-  final Widget prefixIcon;
+  Widget? prefixIcon;
   @override
   Widget build(BuildContext context) {
     return Column(

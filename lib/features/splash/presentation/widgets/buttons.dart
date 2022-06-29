@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../const/colors.dart';
 import '../../../../routing/route_names.dart';
 
+// for all buttons in the app..
 class DefaultButton extends StatelessWidget {
   DefaultButton({
     Key? key,
@@ -36,6 +37,7 @@ class DefaultButton extends StatelessWidget {
   }
 }
 
+// for sign in and sign up by social (add social icon)..
 class SocialButton extends StatelessWidget {
   SocialButton({
     Key? key,
