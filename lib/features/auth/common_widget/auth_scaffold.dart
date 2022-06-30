@@ -29,7 +29,7 @@ class AuthScaffold extends StatelessWidget {
                 left: MediaQuery.of(context).size.width / 20,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, kLoginScreen);
+                    Navigator.pop(context);
                   },
                   child: const CircleAvatar(
                     backgroundColor: Colors.black,

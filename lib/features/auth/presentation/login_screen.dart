@@ -15,6 +15,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthScaffold(
+      isBackAppear: true,
       top: MediaQuery.of(context).size.height / 3.5,
       body: Scaffold(
         body: Padding(

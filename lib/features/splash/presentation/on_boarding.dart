@@ -31,10 +31,12 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all( 8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: DefaultButton(
                   title: 'Get Started',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, kLoginScreen);
+                  },
                 ),
               ),
             ),

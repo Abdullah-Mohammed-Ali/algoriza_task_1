@@ -15,6 +15,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthScaffold(
+        isBackAppear: true,
         top: MediaQuery.of(context).size.height / 5,
         body: Scaffold(
           body: Padding(
